@@ -4,7 +4,7 @@
 #include <SDL3/SDL.h>
 #include "stb_image.h"
 
-void Texture::loadTexture(const char* path, int tx, int ty, int sw, int sh) {
+void Texture::loadTexture(const char* path) {
   GLuint texture;
   glGenTextures(1, &texture);
 
@@ -32,25 +32,17 @@ void Texture::loadTexture(const char* path, int tx, int ty, int sw, int sh) {
   stbi_image_free(data);
 
   m_currentTexture = texture;
-  m_rows = tx;
-  m_columns = ty;
   m_width = width;
   m_height = height;
-  m_texWidth = sw;
-  m_texHeight = sh;
 }
 
-TexCoord Texture::getTextureCoords(int textureIndex) {
-  int x = textureIndex % m_columns;
-  int y = (m_rows - 1) - textureIndex / m_columns;
+TexCoord Texture::getTextureCoords(TextureSpecifier texture) {
+  float u_min = texture.x / static_cast<float>(m_width);
+  float u_max = (texture.x + texture.w) / static_cast<float>(m_width);
+  float v_min = texture.y / static_cast<float>(m_height);
+  float v_max = (texture.y + texture.h) / static_cast<float>(m_height);
 
-  float tileWidth = m_texWidth / static_cast<float>(m_width);
-  float tileHeight = m_texHeight / static_cast<float>(m_height);
-
-  float u_min = x * tileWidth;
-  float u_max = (x + 1) * tileWidth;
-  float v_min = y * tileHeight;
-  float v_max = (y + 1) * tileHeight;
+  // SDL_Log("%d %d %d %d %f %f %f %f\n", texture.x, texture.y, texture.w, texture.h, u_min, u_max, v_min, v_max);
 
   return {
     { u_min, v_max },
@@ -64,8 +56,4 @@ void Texture::use() {
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, m_currentTexture);
   glUniform1i(glGetUniformLocation(m_shaderProgram, "uTexture"), 0);
-}
-
-Dimensions Texture::getTexDimensions() {
-  return { m_texWidth, m_texHeight };
 }

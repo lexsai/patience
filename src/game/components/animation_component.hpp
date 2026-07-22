@@ -6,11 +6,12 @@
 #include <vector>
 
 #include "component.hpp"
+#include "../../renderer/texture.hpp"
 
 class GameObject;
 
 struct Frame {
-  int textureIndex;
+  TextureSpecifier texture;
   float duration;
 };
 using Animations = std::map<std::string, std::vector<Frame>>;

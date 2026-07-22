@@ -21,5 +21,8 @@ void Game::update(Renderer& renderer, UserCommand& userCommand) {
     // for (float i = 0.0f; i < 640.0f; i += 16.0f) {
     //   renderer.drawSprite(i, 100.0f * std::sin(i + SDL_GetTicks() / 300.0f) + 160.0f, 0, 100.0f);
     // }
+    for (auto &[objId, obj]: m_gameObjects) {
+
+    }
   renderer.end();
 }

@@ -7,6 +7,7 @@
 #include <string>
 
 #include "components/component.hpp"
+#include "../renderer/texture.hpp"
 
 using GameObjectId = unsigned int;
 
@@ -25,7 +26,7 @@ class GameObject {
     float m_y{};
     float m_vx{};
     float m_vy{};
-    int m_currentTexture{};
+    TextureSpecifier m_currentTexture{};
     GameObjectId m_id{};
 
     GameObject(GameObjectId id, float x, float y): m_id{ id }, m_x{ x }, m_y{ y } {}

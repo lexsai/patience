@@ -3,6 +3,13 @@
 
 #include <glad/glad.h>
 
+struct TextureSpecifier {
+  int x;
+  int y;
+  int w;
+  int h;
+};
+
 struct Dimensions {
   int w;
   int h;
@@ -23,17 +30,13 @@ struct TexCoord {
 class Texture {
   GLuint m_currentTexture{};
   GLuint m_shaderProgram{};
-  int m_rows{};
-  int m_columns{};
   int m_width{};
   int m_height{};
-  int m_texWidth{};
-  int m_texHeight{};
 
   public:
     Texture(GLuint shaderProgram): m_shaderProgram(shaderProgram) {}
-    void loadTexture(const char* path, int tx, int ty, int sw, int sh);
-    TexCoord getTextureCoords(int textureIndex);
+    void loadTexture(const char* path);
+    TexCoord getTextureCoords(TextureSpecifier texture);
     void use();
     Dimensions getTexDimensions();
 };

@@ -6,11 +6,10 @@
 
 void AnimationComponent::update(Game& game, Renderer& renderer, UserCommand& userCommand) {
   std::shared_ptr<GameObject> owner = m_ownerObject.lock();
-  SDL_Log("animation %d %f\n", m_currentFrame, m_animationTime);
 
   std::vector<Frame> frames = getFrames();
   Frame currentFrame = frames[m_currentFrame];
-  owner->m_currentTexture = currentFrame.textureIndex;
+  owner->m_currentTexture = currentFrame.texture;
 
   m_animationTime += 0.015f;
   if (m_animationTime > currentFrame.duration) {

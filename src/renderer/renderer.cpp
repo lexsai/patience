@@ -46,7 +46,7 @@ void Renderer::init() {
   loadShader("assets/shaders/vert.glsl", "assets/shaders/frag.glsl");
 
   m_texture = Texture{ m_shaderProgram };
-  m_texture.loadTexture("assets/teto.png", 4, 4, 16, 24);
+  m_texture.loadTexture("assets/teto.png");
 
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glBufferData(GL_ARRAY_BUFFER, m_maxVertices * sizeof(Vertex), nullptr, GL_DYNAMIC_DRAW);
@@ -78,15 +78,13 @@ void Renderer::end() {
   m_vertices.clear();
 }
 
-void Renderer::drawSprite(float x, float y, int texIndex, float width) {
-  Dimensions d = m_texture.getTexDimensions();
-
+void Renderer::drawSprite(float x, float y, TextureSpecifier t, float width) {
   float x1 = x; 
   float x2 = x + width;
   float y1 = y;
-  float y2 = y + width * (d.h / static_cast<float>(d.w));
+  float y2 = y + width * (t.h / static_cast<float>(t.w));
 
-  TexCoord texCoord = m_texture.getTextureCoords(texIndex);
+  TexCoord texCoord = m_texture.getTextureCoords({ t.x, t.y, t.w, t.h });
 
   addVertex(x, y, texCoord.bl.u, texCoord.bl.v);
   addVertex(x2, y2, texCoord.tr.u, texCoord.tr.v);

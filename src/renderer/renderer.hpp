@@ -30,7 +30,7 @@ class Renderer {
     void begin();
     void end();
 
-    void drawSprite(float x, float y, int textureIndex, float scaleFactor);
+    void drawSprite(float x, float y, TextureSpecifier t, float width);
 };
 
 #endif

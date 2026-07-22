@@ -12,18 +12,18 @@
 #include <SDL3/SDL.h>
 
 std::map<std::string, std::vector<Frame>> playerAnimations {
-  {"down", {{0, 0.25f}, {1, 0.25f}, {0, 0.25f}, {2, 0.25f}}},
-  {"right", {{4, 0.25f}, {5, 0.25f}, {7, 0.25f}, {5, 0.25f}}},
-  {"left", {{8, 0.25f}, {9, 0.25f}, {11, 0.25f}, {10, 0.25f}}},
-  {"up", {{12, 0.25f}, {13, 0.25f}, {12, 0.25f}, {14, 0.25f}}},
-  {"down_idle", {{0, 0.25f}}},
-  {"right_idle", {{4, 0.25f}}},
-  {"left_idle", {{8, 0.25f}}},
-  {"up_idle", {{12, 0.25f}}},
+  {"down", {{{0, 72, 16, 24}, 0.25f}, {{32, 72, 16, 24}, 0.25f}, {{0, 72, 16, 24}, 0.25f}, {{16, 72, 16, 24}, 0.25f}}},
+  {"right", {{{0, 48, 16, 24}, 0.25f}, {{16, 48, 16, 24}, 0.25f}, {{0, 48, 16, 24}, 0.25f}, {{32, 48, 16, 24}, 0.25f}}},
+  {"left", {{{0, 24, 16, 24}, 0.25f}, {{16, 24, 16, 24}, 0.25f}, {{0, 24, 16, 24}, 0.25f}, {{32, 24, 16, 24}, 0.25f}}},
+  {"up", {{{0, 0, 16, 24}, 0.25f}, {{16, 0, 16, 24}, 0.25f}, {{0, 0, 16, 24}, 0.25f}, {{32, 0, 16, 24}, 0.25f}}},
+  {"down_idle", {{{0, 72, 16, 24}, 0.25f}}},
+  {"right_idle", {{{0, 48, 16, 24}, 0.25f}}},
+  {"left_idle", {{{0, 24, 16, 24}, 0.25f}}},
+  {"up_idle", {{{0, 0, 16, 24}, 0.25f}}},
 };
 
 std::shared_ptr<GameObject> GameObjectFactory::createPlayer(float x, float y) {
-  auto player_ptr = std::shared_ptr<GameObject> { 
+  auto player_ptr = std::shared_ptr<GameObject> {
     new GameObject{ getNextGameObjectId(), x, y }
   };
 
