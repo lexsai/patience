@@ -17,10 +17,12 @@ struct UserCommand {
 
 class Game {
   std::map<GameObjectId, std::shared_ptr<GameObject>> m_gameObjects{};
+  GameObjectId m_gameMapObjectId{};
 
   public:
     void init();
     void update(Renderer& renderer, UserCommand& userCommand);
+    void resolveCollision(std::shared_ptr<GameObject> object);
 };
 
 #endif

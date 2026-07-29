@@ -1,0 +1,47 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "untitled.tmj",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "teto.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "untitled.tmj": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 167.5,
+                "y": 205
+            }
+        },
+        "untitled.tmx": {
+            "scale": 0.125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -1244,
+                "y": 2440
+            }
+        }
+    },
+    "last.imagePath": "C:/Users/Alex/Desktop/study/patience/assets",
+    "map.lastUsedFormat": "json",
+    "openFiles": [
+        "untitled.tmj"
+    ],
+    "project": "map.tiled-project",
+    "recentFiles": [
+        "teto.tsx",
+        "untitled.tmj",
+        "untitled.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

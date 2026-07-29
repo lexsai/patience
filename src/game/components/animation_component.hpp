@@ -19,9 +19,9 @@ using Animations = std::map<std::string, std::vector<Frame>>;
 class AnimationComponent: public Component {
   float m_animationTime{};
   int m_currentFrame{};
-  Animations m_animations {};
-  std::string m_animationPrefix {};
-  std::string m_animationSuffix {};
+  Animations m_animations{};
+  std::string m_animationPrefix{};
+  std::string m_animationSuffix{};
 
   public:
     AnimationComponent(

@@ -1,9 +1,0 @@
-C:\Users\Alex\Desktop\study\patience\src\main.cpp;C:\Users\Alex\Desktop\study\patience\build\patience.dir\Debug\main.obj
-C:\Users\Alex\Desktop\study\patience\src\renderer\renderer.cpp;C:\Users\Alex\Desktop\study\patience\build\patience.dir\Debug\renderer.obj
-C:\Users\Alex\Desktop\study\patience\src\renderer\texture.cpp;C:\Users\Alex\Desktop\study\patience\build\patience.dir\Debug\texture.obj
-C:\Users\Alex\Desktop\study\patience\src\game\game_object.cpp;C:\Users\Alex\Desktop\study\patience\build\patience.dir\Debug\game_object.obj
-C:\Users\Alex\Desktop\study\patience\src\game\game.cpp;C:\Users\Alex\Desktop\study\patience\build\patience.dir\Debug\game.obj
-C:\Users\Alex\Desktop\study\patience\src\game\components\animation_component.cpp;C:\Users\Alex\Desktop\study\patience\build\patience.dir\Debug\animation_component.obj
-C:\Users\Alex\Desktop\study\patience\src\game\components\graphic_component.cpp;C:\Users\Alex\Desktop\study\patience\build\patience.dir\Debug\graphic_component.obj
-C:\Users\Alex\Desktop\study\patience\src\game\components\physics_component.cpp;C:\Users\Alex\Desktop\study\patience\build\patience.dir\Debug\physics_component.obj
-C:\Users\Alex\Desktop\study\patience\src\game\components\player_component.cpp;C:\Users\Alex\Desktop\study\patience\build\patience.dir\Debug\player_component.obj

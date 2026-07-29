@@ -15,7 +15,10 @@ enum class ComponentId: unsigned int {
   Movement,
   Graphic,
   Animation,
-  Physics
+  Physics,
+  Collidable,
+  Interactable,
+  Map,
 };
 
 class Component {

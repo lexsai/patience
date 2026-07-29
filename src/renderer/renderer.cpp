@@ -15,7 +15,7 @@
 #include <stddef.h>
 
 namespace {
-  std::string readFile(const char *path) {
+  std::string readFile(const char* path) {
     std::ifstream input = std::ifstream(path);
     if (!input.is_open()) {
       SDL_Log("could not open shader file: '%s'\n", path);

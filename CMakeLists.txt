@@ -12,6 +12,10 @@ add_subdirectory(vendor/json EXCLUDE_FROM_ALL)
 
 add_executable(patience WIN32)
 
+set_target_properties(patience PROPERTIES
+    VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/"
+)
+
 target_sources(patience
   PRIVATE
     src/main.cpp
@@ -23,6 +27,8 @@ target_sources(patience
     src/game/components/graphic_component.cpp
     src/game/components/physics_component.cpp
     src/game/components/player_component.cpp
+    src/game/components/collidable_component.cpp
+    src/game/components/map_component.cpp
 )
 
 target_link_libraries(patience 

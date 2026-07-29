@@ -19,7 +19,7 @@ struct UserCommand;
 class GameObject {
   friend class GameObjectFactory;
 
-  std::map<ComponentId, std::shared_ptr<Component>> m_gameObjectComponents;
+  std::map<ComponentId, std::shared_ptr<Component>> m_gameObjectComponents{};
 
   public:
     float m_x{};
@@ -33,6 +33,7 @@ class GameObject {
 
     void update(Game& game, Renderer& renderer, UserCommand& userCommand);
 
+    bool hasComponent(ComponentId);
     std::shared_ptr<Component> getComponent(ComponentId);
   private:
     void addComponent(std::shared_ptr<Component> component);
@@ -43,10 +44,12 @@ class GameObjectFactory {
 
   public:
     std::shared_ptr<GameObject> createPlayer(float x, float y);
+    std::shared_ptr<GameObject> createWall(float x, float y);
+    std::shared_ptr<GameObject> createMap();
 
     // std::shared_ptr<Component> createComponent();
 
   private:
-    GameObjectId getNextGameObjectId() { ++m_lastGameObjectId; return m_lastGameObjectId; }
+    GameObjectId getNextGameObjectId() { return m_lastGameObjectId++; }
 };
 #endif

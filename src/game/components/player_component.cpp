@@ -4,8 +4,9 @@
 #include "animation_component.hpp"
 #include "../game.hpp" 
 
+#include <SDL3/SDL.h>
+
 void PlayerComponent::update(Game& game, Renderer& renderer, UserCommand& userCommand) {
-  // SDL_Log("movement\n");
   std::shared_ptr<GameObject> owner = m_ownerObject.lock();
   std::shared_ptr<AnimationComponent> a = std::static_pointer_cast<AnimationComponent>(
     owner->getComponent(ComponentId::Animation)

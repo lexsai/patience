@@ -3,14 +3,22 @@
 
 #include "component.hpp"
 
+#include "volume.hpp"
+
+class CollidableComponent;
 class GameObject;
 
 class PhysicsComponent: public Component {
+  Volume m_volume{};
+
   public:
-    explicit PhysicsComponent(std::shared_ptr<GameObject>& gameObject): 
-      Component{ ComponentId::Physics, gameObject } {}
+    explicit PhysicsComponent(std::shared_ptr<GameObject>& gameObject, Volume volume): 
+      Component{ ComponentId::Physics, gameObject },
+      m_volume{ volume } {}
 
     void update(Game& game, Renderer& renderer, UserCommand& userCommand) override;
+
+    bool overlaps(float x, float y, std::shared_ptr<CollidableComponent> c);
 };
 
 #endif
